@@ -1,13 +1,15 @@
-﻿namespace AuctionApp.Domain.Models;
-public class Bid
+﻿using EntityFramework.Domain.Abstractions;
+
+namespace AuctionApp.Domain.Models;
+public class Bid : Entity
 {
-    public int Id { get; set; }
+    public required Lot Lot { get; set; }
 
-    public Lot Lot { get; set; }
+    public required int LotId { get; set; }
 
-    public decimal Amount { get; set; }
+    public required decimal Amount { get; set; }
 
-    public DateTimeOffset CreateTime { get; set; }
+    public required DateTimeOffset CreateTime { get; set; }
 
-    public bool IsWon { get; set; }
+    public required bool IsWon { get; set; }
 }

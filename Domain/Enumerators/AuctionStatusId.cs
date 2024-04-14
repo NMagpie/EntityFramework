@@ -1,5 +1,5 @@
 ﻿namespace AuctionApp.Domain.Enumerators;
-public enum AuctionStatus
+public enum AuctionStatusId : int
 {
     Created,
     Active,
