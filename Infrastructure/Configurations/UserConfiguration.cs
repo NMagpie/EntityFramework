@@ -16,6 +16,10 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .HasMaxLength(64);
 
         builder
+            .HasIndex(x => x.UserName)
+            .IsUnique();
+
+        builder
             .Property(x => x.Balance)
             .HasColumnType("money");
 
