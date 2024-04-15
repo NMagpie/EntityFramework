@@ -1,4 +1,5 @@
 ﻿using EntityFramework.Domain.Abstractions;
+using EntityFramework.Domain.Models;
 
 namespace AuctionApp.Domain.Models;
 public class Lot : Entity
@@ -16,4 +17,6 @@ public class Lot : Entity
     public decimal Price { get; set; }
 
     public ICollection<Bid> Bids { get; set; } = [];
+
+    public ICollection<LotCategory>? Categories { get; set; }
 }

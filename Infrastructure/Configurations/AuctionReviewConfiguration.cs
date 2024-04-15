@@ -19,8 +19,8 @@ public class AuctionReviewConfiguration : IEntityTypeConfiguration<AuctionReview
             .HasOne(x => x.User)
             .WithOne()
             .HasForeignKey<AuctionReview>(x => x.UserId)
-            .IsRequired()
-            .OnDelete(DeleteBehavior.NoAction);
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.SetNull);
 
         builder
             .HasOne(x => x.Auction)

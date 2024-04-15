@@ -25,19 +25,21 @@ namespace EntityFramework.Infrastructure.Configurations
                 .HasMany(x => x.Lots)
                 .WithOne(x => x.Auction)
                 .HasForeignKey(x => x.AuctionId)
-                .IsRequired(false);
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder
                 .HasOne(x => x.Creator)
                 .WithOne()
                 .HasForeignKey<Auction>(x => x.CreatorId)
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Restrict);
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder
                 .HasOne(x => x.Status)
                 .WithOne()
-                .HasForeignKey<Auction>(x => x.StatusId);
+                .HasForeignKey<Auction>(x => x.StatusId)
+                .IsRequired();
         }
     }
 }

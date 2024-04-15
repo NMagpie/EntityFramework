@@ -12,11 +12,11 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .ValueGeneratedOnAdd();
 
         builder
-            .Property(x => x.UserName)
+            .Property(x => x.Username)
             .HasMaxLength(64);
 
         builder
-            .HasIndex(x => x.UserName)
+            .HasIndex(x => x.Username)
             .IsUnique();
 
         builder

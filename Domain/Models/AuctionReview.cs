@@ -4,9 +4,9 @@ namespace AuctionApp.Domain.Models
 {
     public class AuctionReview : Entity
     {
-        public required User User { get; set; }
+        public User? User { get; set; }
 
-        public required int UserId { get; set; }
+        public int? UserId { get; set; }
 
         public required Auction Auction { get; set; }
 

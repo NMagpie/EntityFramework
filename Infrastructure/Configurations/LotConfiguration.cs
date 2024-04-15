@@ -31,6 +31,7 @@ public class LotConfiguration : IEntityTypeConfiguration<Lot>
             .HasMany(x => x.Bids)
             .WithOne(x => x.Lot)
             .HasForeignKey(x => x.LotId)
-            .IsRequired();
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

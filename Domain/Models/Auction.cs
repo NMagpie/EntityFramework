@@ -7,9 +7,9 @@ public class Auction : Entity
 {
     public required string Title { get; set; }
 
-    public required User Creator { get; set; }
+    public User? Creator { get; set; }
 
-    public required int CreatorId { get; set; }
+    public int? CreatorId { get; set; }
 
     public DateTimeOffset? StartTime { get; set; }
 
@@ -19,5 +19,5 @@ public class Auction : Entity
 
     public required AuctionStatusId StatusId { get; set; }
 
-    public ICollection<Lot> Lots { get; set; } = [];
+    public ICollection<Lot>? Lots { get; set; }
 }

@@ -4,7 +4,7 @@ namespace AuctionApp.Domain.Models
 {
     public class User : Entity
     {
-        public required string UserName { get; set; }
+        public required string Username { get; set; }
 
         public decimal Balance { get; set; }
     }

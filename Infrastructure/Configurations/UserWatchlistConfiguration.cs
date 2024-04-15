@@ -22,7 +22,7 @@ public class UserWatchlistConfiguration : IEntityTypeConfiguration<UserWatchlist
             .HasOne(x => x.Auction)
             .WithOne()
             .HasForeignKey<UserWatchlist>(x => x.AuctionId)
-            .IsRequired()
-            .OnDelete(DeleteBehavior.Cascade);
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }
